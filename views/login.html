@@ -3,58 +3,14 @@
 
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<title>
-		<%= title %>
-	</title>
-	<!-- 最新 Bootstrap 核心 CSS 文件 -->
-	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
-	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
-
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
+	 
+	<%include _head.html %> 
+</head>  
 <body screen_capture_injected="true">
-	<nav class="navbar navbar-inverse" role="navigation">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-				<a class="navbar-brand" href="#">SUBAPI</a>
-			</div>
+	
+	<%include _nav.html %> 
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li ><a href="/home">Home</a></li>
-					<li><a href="/users">Users</a></li>
-					<li><a href="/test">test</a></li>
-
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/login">登录 </a></li>
-					<li><a href="/register">   注册</a></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container-fluid -->
-	</nav>
-
+	  
 	<div class="container-fluid">
 		<form class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 form-horizontal margin-top-p5" role="form" method="post" onsubmit="return false">
 			<fieldset>
@@ -96,7 +52,6 @@
 	</div>
 
 	<script src="./javascripts/login.js"></script>
-</body>
-</head>
+</body> 
 
 </html>

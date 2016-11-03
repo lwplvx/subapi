@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <style type="text/css">
-    a{margin-left: 20px; text-decoration: none;}
-    a:hover{text-decoration: underline;}
-    </style>
-  </head>
-  <body>
+	<%include _head.html %> 
+</head>  
+<body> 
+	<%include _nav.html %> 
+  
   <h1>Your name:   <%= user.name %></h1>
     <p>Welcome to your home ~</p>
     <p><a href="/logout">我要注销 </a>

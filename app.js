@@ -10,6 +10,7 @@ var session = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var apps = require('./routes/apps');
 var test = require('./routes/test');
 
 var app = express(); 
@@ -23,12 +24,14 @@ var app = express();
  }));
 
 
+var ejs=require("ejs");
+//app.open='{{';
+//app.close='}}'; 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine("html", require("ejs").__express); // or   app.engine("html",require("ejs").renderFile);
+app.engine("html", ejs.__express); // or   app.engine("html",require("ejs").renderFile);
 //app.set("view engine","ejs");
-app.set('view engine', 'html');
-
+app.set('view engine', 'html'); 
 
 
 global.dbHandel = require('./database/dbHandel');
@@ -47,6 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/test', test);
+app.use('/apps',apps);
 
 app.use('/login', routes); // 即为为路径 /login 设置路由
 app.use('/register', routes); // 即为为路径 /register 设置路由

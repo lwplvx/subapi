@@ -10,9 +10,9 @@ module.exports = {
         name:{type:String,required:true}, 
         appurl:{type:String,required:true}, 
         accessauthority:{type:Boolean,required:false}, 
-        appicon:{type:Image,required:false}, 
+        appicon:{type:String,required:false}, 
         describe:{type:String,required:false}, 
         rootpath:{type:String,required:false}, 
-        applicationmember:{type:user,required:false},
+        applicationmember:{type:Object,required:false},
     }
 };
