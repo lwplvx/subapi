@@ -1,0 +1,19 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar-inverse{
+border-radius: 0px;
+
+}
+.margin-top-p5
+{
+margin-top: 5%;
+
+
+}
