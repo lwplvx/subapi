@@ -24,7 +24,7 @@ new Vue({
                 data: this.loginuser,
                 success: function(data,status){ 
                     if(status == 'success'){ 
-                        location.href = 'home';
+                      location.href = 'apps';
                     }
                 },
                 error: function(data,status){ 

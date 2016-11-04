@@ -12,9 +12,9 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var apps = require('./routes/apps');
 var test = require('./routes/test');
+var console = require('./routes/console');
 
 var app = express(); 
-
 
  app.use(session({ 
    secret: 'secret',
@@ -51,6 +51,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/test', test);
 app.use('/apps',apps);
+app.use('/console',console);
 
 app.use('/login', routes); // 即为为路径 /login 设置路由
 app.use('/register', routes); // 即为为路径 /register 设置路由
