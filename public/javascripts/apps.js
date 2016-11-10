@@ -16,7 +16,7 @@ new Vue({
     methods: {
         create: function () {
             $.ajax({
-                url: '/apps/create',
+                url: '/app/create',
                 type: 'post',
                 data: this.appmodel,
                 success: function (data, status) {

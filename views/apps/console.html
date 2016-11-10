@@ -11,19 +11,32 @@
 
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<h3 class="text-center"> 
-									<%= app.name %>
+				<h3 class="text-center">
+					<%= app.name %>
 				</h3>
 			</div>
 			<div>
 				<div class="panel panel-success">
-					<div class="panel-body"> 
-						<div>
-							appurl:
-							<%= app.appurl %>
-						</div>
-					</div>
+					<div class="panel-body">
 
+						<h5 class="row">
+							<div class="col-sm-10">
+								appurl:
+								<%= app.appurl %>
+							</div>
+							<div class="col-sm-2 text-right">
+								<a class="btn btn-xs btn-danger" href="/app/delete/<%= app.id %>">delete</a>
+							</div>
+						</h5>
+						<h4>
+							id:
+							<%= app.id %>
+						</h4>
+						<strong>
+							describe:
+							<%= app.describe %>
+						</strong>
+					</div>
 
 				</div>
 			</div>

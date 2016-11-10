@@ -20,13 +20,27 @@
 					<div class="col-md-3 col-sm-4">
 						<div class="panel panel-success">
 							<div class="panel-body">
-								<div>
-								<a class="btn btn-link" href="console/<%= app.name %>">	 <h4><%= app.name %></h4></a>
+								<div class="row">
+									<div class="col-sm-8">
+										<a class="btn btn-link" href="console/<%= app.name %>">
+											<h4>
+												<%= app.name %>
+											</h4>
+										</a>
+
+									</div>
+									<div class="col-sm-4 text-right">
+										<a class="btn btn-link" href="console/<%= app.name %>">
+											<h5>
+												预览
+												</h4>
+										</a>
+									</div>
 								</div>
 								<div>
 									appurl:
 									<%= app.appurl %>
-									<%= app.describe %>
+										<%= app.describe %>
 								</div>
 							</div>
 						</div>
@@ -35,7 +49,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="panel panel-info">
 								<div class="panel-body">
-									<p><a href="/apps/create">创建App </a></p>
+									<p><a href="/app/create">创建App </a></p>
 								</div>
 							</div>
 

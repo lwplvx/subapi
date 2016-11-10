@@ -57,6 +57,25 @@ router.route("/create").get(function (req, res) {
     });
 });
 
+/* GET home page. */
+router.get('/delete/:appid', function (req, res, next) {
+    if (!req.session.user) {                     //到达/home路径首先判断是否已经登录
+        req.session.error = "请先登录"
+        res.redirect("/login");                //未登录则重定向到 /login 路径
+    }
+
+    var appid = req.params.appid;
+    var App = global.dbHandel.getModel('app');
+    App.remove({ '_id': appid }, function (error) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('delete ok!');
+        }
+    });
+    res.redirect("/app"); 
+
+});
 
 
 module.exports = router;
