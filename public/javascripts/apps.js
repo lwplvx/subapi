@@ -21,7 +21,7 @@ new Vue({
                 data: this.appmodel,
                 success: function (data, status) {
                     if (status == 'success') {
-                        location.href = '/apps';
+                        location.href = '/app';
                     }
                 },
                 error: function (data, err) {

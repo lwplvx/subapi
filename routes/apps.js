@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
     App.find({ 'applicationmember.name': req.session.user.name }, function (err, docs) {
 
         // docs 是查询的结果数组
-        res.render('apps/index', { title: 'SUBAPI apps', apps: docs,user:req.session.user });
+        res.render('apps/index', { title: 'SUBAPI app', apps: docs,user:req.session.user });
     });
 
 });

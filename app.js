@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/test', test);
-app.use('/apps',apps);
+app.use('/app',apps);
 app.use('/console',console);
 
 app.use('/login', routes); // 即为为路径 /login 设置路由
