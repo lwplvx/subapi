@@ -1,78 +1,74 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<%include ../_head.html %>
+    <%include ../_head.html %>
 </head>
-
 <body>
+    <%include ../_nav.html %>
 
-	<%include ../_nav.html %>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <form class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 form-horizontal margin-top-p5" role="form" method="post" onsubmit="return false">
+                <fieldset>
+                    <div id="app" class="panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="text-center">创建App</h3>
 
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<form class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 form-horizontal margin-top-p5" role="form" method="post" onsubmit="return false">
-					<fieldset>
-						<div id="app" class="panel panel-default">
-							<div class="panel-body">
-								<h3 class="text-center">创建App</h3>
-								<legend></legend>
-								<div class="panel-body">
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
-											</span>
-											<input type="text" class="form-control" v-model="appmodel.name" placeholder="App名称" required>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-											</span>
-											<input type="text" class="form-control" v-model="appmodel.appurl" placeholder="Appurl" required>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-											</span>
-											<input type="text" class="form-control " v-model="appmodel.accessauthority" placeholder="访问权限 " required>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-											</span>
-											<input type="text" class="form-control " v-model="appmodel.rootpath" placeholder="rootpath " required>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-											</span>
-											<textarea type="text" 
-											class="form-control "
-											 v-model="appmodel.describe" placeholder="describe " 
-											 required></textarea>
-										</div>
-									</div>
-									<div class="form-group ">
-										<button type="submit " class="btn btn-primary btn-block btn-lg " v-on:click="create()">创建App</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				</form>
-			</div>
-		</div>
-
-		<script src="/javascripts/apps.js"></script>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </span>
+                                        <input type="text" class="form-control" v-model="appmodel.name" placeholder="App名称" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </span>
+                                        <input type="text" class="form-control" v-model="appmodel.appurl" placeholder="Appurl" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </span>
+                                        <input type="text" class="form-control " v-model="appmodel.accessauthority" placeholder="访问权限 " required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </span>
+                                        <input type="text" class="form-control " v-model="appmodel.rootpath" placeholder="rootpath " required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </span>
+                                        <textarea type="text"
+                                                  class="form-control "
+                                                  v-model="appmodel.describe" placeholder="describe "
+                                                  required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg "
+                                             v-on:click="create()">创建App</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <script src="/javascripts/apps.js"></script>
 </body>
-
 </html>

@@ -14,5 +14,11 @@ module.exports = {
         describe:{type:String,required:false}, 
         rootpath:{type:String,required:false}, 
         applicationmember:{type:Object,required:false},
+    },
+    category:{ 
+    appid: { type: String, required: false },
+    name:{type:String,required:true},   
+    describe:{type:String,required:false},   
     }
+
 };
