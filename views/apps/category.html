@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <%include ../_head.html %>
+</head>
+
+<body id="app"> 
+    <%include ../_nav.html %>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-sm-4 col-md-3">
+                    <br /> 
+                </div>
+                <div class="col-sm-8 col-md-9">
+
+                    <h2>
+                        <%= category.name %> 
+                    </h2> 
+                    <h4>
+                        describe:
+                        <%= category.describe %>
+                    </h4> 
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="/javascripts/consoles.js"></script>
+
+</body>
+
+</html>

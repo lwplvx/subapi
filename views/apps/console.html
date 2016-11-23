@@ -5,82 +5,87 @@
     <%include ../_head.html %>
 </head>
 
-<body id="app">
-
+<body id="app"> 
     <%include ../_nav.html %>
 
     <div class="container-fluid">
 
-        <div class="col-xs-12">
-            <div class="col-sm-4 col-md-3">
-                <br />
-                <div class="list-group">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-sm-4 col-md-3">
+                    <br />
+                    <div class="list-group">
 
-                    <a class="list-group-item active">
-                        <h4 class="list-group-item-heading">分类</h4>
+                        <a class="list-group-item active">
+                            <h4 class="list-group-item-heading">分类</h4>
 
-                    </a>
-                    <% categorys.forEach(function (category) { %>
-                    <div class="list-group-item"><%= category.name %></div>
-                    <% })   %>
-                    <div>
-
-                    </div>
-                    <div class="list-group-item">ddddd</div>
-                    <form>
-                        <div class="list-group-item" v-show="category.isadd">
-                            <input class="form-control" required
-                                   type="text" placeholder="分类名称"
-                                   v-model="category.name" />
-                        </div>
-
-                        <div class="list-group-item" v-show="category.isadd">
-                            <input class="form-control" required
-                                   type="text" placeholder="分类描述"
-                                   v-model="category.describe" />
-                        </div>
+                        </a>
+                        <% categorys.forEach(function (category) { %>
                         <div class="list-group-item">
-                            <button class="btn btn-xs btn-success" v-if="!category.isadd"
-                                    v-on:click="category.isadd=!category.isadd">
-                                添加分类
-                            </button>
+                            <a href="category/<%= category.id %>">
 
-                            <button type="submit" class="btn btn-xs btn-primary" v-if="category.isadd"
-                                    v-on:click="addCategory(<%= app.id %>)">
-                                确定添加
-                            </button>
-                            <button class="btn btn-xs btn-warning" v-if="category.isadd"
-                                    v-on:click="category.isadd=!category.isadd">
-                                取消添加
-                            </button>
+                                <%= category.name %>
+                            </a>
                         </div>
-                    </form>
+                        <% })   %>
+                        <div>
+
+                        </div>
+                        <form>
+                            <div class="list-group-item" v-show="category.isadd">
+                                <input class="form-control" required
+                                       type="text" placeholder="分类名称"
+                                       v-model="category.name" />
+                            </div>
+
+                            <div class="list-group-item" v-show="category.isadd">
+                                <input class="form-control" required
+                                       type="text" placeholder="分类描述"
+                                       v-model="category.describe" />
+                            </div>
+                            <div class="list-group-item">
+                                <button class="btn btn-xs btn-success" v-if="!category.isadd"
+                                        v-on:click="category.isadd=!category.isadd">
+                                    添加分类
+                                </button>
+
+                                <button type="submit" class="btn btn-xs btn-primary" v-if="category.isadd"
+                                        v-on:click="createCategory('<%= app.id %>')">
+                                    确定添加
+                                </button>
+                                <button class="btn btn-xs btn-warning" v-if="category.isadd"
+                                        v-on:click="category.isadd=!category.isadd">
+                                    取消添加
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
+                <div class="col-sm-8 col-md-9">
 
-            </div>
-            <div class="col-sm-8 col-md-9">
-
-                <h2>
-                    <%= app.name %>
-                    <small>
-                        <a class="btn btn-xs btn-danger"
-                           href="/app/delete/<%= app.id %>">删除应用</a>
-                    </small>
-                </h2>
-                <h4>
-                    appurl:
-                    <%= app.appurl %>
-                </h4>
-                <h4>
-                    id:
-                    <%= app.id %>
-                </h4>
-                <h4>
-                    describe:
-                    <%= app.describe %>
-                </h4>
+                    <h2>
+                        <%= app.name %>
+                        <small>
+                            <a class="btn btn-xs btn-danger"
+                               href="/app/delete/<%= app.id %>">删除应用</a>
+                        </small>
+                    </h2>
+                    <h4>
+                        appurl:
+                        <%= app.appurl %>
+                    </h4>
+                    <h4>
+                        id:
+                        <%= app.id %>
+                    </h4>
+                    <h4>
+                        describe:
+                        <%= app.describe %>
+                    </h4>
 
 
+                </div>
             </div>
         </div>
 

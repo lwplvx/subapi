@@ -8,6 +8,7 @@ new Vue({
             name: "",
             describe: "",
             isadd: false,
+            appid:""
         },
     },
     methods: {

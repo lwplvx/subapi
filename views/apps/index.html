@@ -12,33 +12,28 @@
                 我的应用
             </h3>
         </div>
-        <div>
-            <% apps.forEach(function(app){ %>
-            <div class="col-md-3 col-sm-4">
-                <div class="panel panel-success">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-sm-6 col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <% apps.forEach(function(app){ %>
+                <div class="col-md-3 col-sm-4">
+                    <div class="panel panel-success">
+                        <div class="panel-body">
+                            <div class="col-sm-12">
                                 <h4>
                                     <%= app.name %>
                                 </h4>
                             </div>
-                            <div class="col-sm-3 col-xs-6">
-                                <h5>
+                            <div class="col-sm-12 text-right">
+                                <p>
                                     <a class="btn btn-link" href="console/<%= app.name %>">
                                         编辑
                                     </a>
-                                </h5>
-                            </div>
-                            <div class="col-sm-3 col-xs-6">
-                                <h5>
                                     <a class="btn btn-link" target="viewdoc" href="doc/<%= app.name %>">
                                         预览
                                     </a>
-                                </h5>
+                                </p>
                             </div>
-                        </div>
-                        <div>
+
                             <h5>
                                 根目录:
                                 <a href="<%= app.appurl %>" target="<%= app.name %>" class="btn-link">
@@ -49,19 +44,19 @@
                                 描述：
                                 <%= app.describe %>
                             </h5>
+
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+                <div class="col-md-3 col-sm-4">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <p><a href="/app/create">创建App </a></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <% }) %>
-            <div class="col-md-3 col-sm-4">
-                <div class="panel panel-info">
-                    <div class="panel-body">
-                        <p><a href="/app/create">创建App </a></p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </body>
