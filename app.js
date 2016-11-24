@@ -14,6 +14,7 @@ var apps = require('./routes/apps');
 var home = require('./routes/home');
 var test = require('./routes/test');
 var consoles = require('./routes/console');
+var api = require('./routes/api');
 
 var app = express(); 
 
@@ -52,7 +53,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/test', test);
 app.use('/app',apps);
-app.use('/console',consoles);
+app.use('/console', consoles);
+app.use('/api', api);
 
 app.use('/login', routes); // 即为为路径 /login 设置路由
 app.use('/register', routes); // 即为为路径 /register 设置路由

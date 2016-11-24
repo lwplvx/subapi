@@ -17,25 +17,11 @@ router.get('/:appname', function (req, res, next) {
                 res.send(404);
                 return;
             }
-            var Category = global.dbHandel.getModel('category');
-            Category.find({ 'appid': doc._id }, function (err, docs) {
-                if (docs) {
-                    res.render('apps/console', {
-                        title: 'SUBAPI apps',
-                        app: doc,
-                        categorys: docs,
-                        user: req.session.user
-                    });
-                } else {
-                    // docs 是查询的结果数组
-                    res.render('apps/console', {
-                        title: 'SUBAPI apps',
-                        app: doc,
-                        categorys: [],
-                        user: req.session.user
-                    });
-                }
-
+            // docs 是查询的结果数组
+            res.render('apps/console', {
+                title: 'SUBAPI apps',
+                app: doc, 
+                user: req.session.user
             });
         });
 
@@ -80,40 +66,6 @@ router.get('/category/:categoryid', function (req, res, next) {
 
 });
 
-/* GET home page. */
-router.post('/createCategory', function (req, res, next) {
-    if (!req.session.user) {                     //到达/home路径首先判断是否已经登录
-        req.session.error = "请先登录"
-        res.redirect("/login");                //未登录则重定向到 /login 路径
-    }
-    var model = req.body;
-
-    var Category = global.dbHandel.getModel('category');
-    Category.findOne({ "name": model.name }, function (err, doc) {
-        if (doc) {
-            res.send(500);
-            req.session.error = '已经存在分类！';
-            console.log(err);
-            //提示已经存在分类
-            return;
-        } else {
-            Category.create({
-                appid: model.appid,
-                name: model.name,
-                describe: model.describe,
-            }, function (err, doc) {
-                if (err) {
-                    res.send(500);
-                    console.log(err);
-                } else {
-                    req.session.error = 'Category创建成功！';
-                    res.redirect("/");
-                }
-            });
-        }
-    });
-
-});
 
 
 module.exports = router;

@@ -5,13 +5,13 @@
     <%include ../_head.html %>
 </head>
 
-<body id="app"> 
+<body id="app">
     <%include ../_nav.html %>
 
     <div class="container-fluid">
 
-        <div class="row">
-            <div class="col-xs-12">
+        <div class="panel-body">
+            <div class="row">
                 <div class="col-sm-4 col-md-3">
                     <br />
                     <div class="list-group">
@@ -20,18 +20,16 @@
                             <h4 class="list-group-item-heading">分类</h4>
 
                         </a>
-                        <% categorys.forEach(function (category) { %>
-                        <div class="list-group-item">
-                            <a href="category/<%= category.id %>">
-
-                                <%= category.name %>
+                        <!--Vue for -->
+                        <div v-for="item in categories" class="list-group-item">
+                            <a href="category/{{item._id}}">
+                                {{item.name }} 
                             </a>
                         </div>
-                        <% })   %>
                         <div>
 
                         </div>
-                        <form>
+                        <div>
                             <div class="list-group-item" v-show="category.isadd">
                                 <input class="form-control" required
                                        type="text" placeholder="分类名称"
@@ -58,7 +56,7 @@
                                     取消添加
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </div>
 
                 </div>
@@ -91,7 +89,10 @@
 
     </div>
     <script src="/javascripts/consoles.js"></script>
+    <script>
+        app.getCategories('<%=app.id %>');
 
+    </script>
 </body>
 
 </html>
